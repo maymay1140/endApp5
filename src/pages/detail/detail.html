@@ -1,0 +1,71 @@
+
+<ion-header>
+  <ion-navbar color="k">
+    <ion-title>{{item.name}} {{item.surname}}</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding class="con-color">
+  <button ion-button color="k" class="marginTop" (click)="Contact_work(item)">
+    <ion-icon name="create"></ion-icon>&nbsp; ติดต่องาน
+  </button>
+  <br>
+  <ion-item-divider color="k">รายละเอียดช่างถ่ายภาพ</ion-item-divider>
+  <ion-card >
+    <ion-item color="s">
+    <ion-card-content>
+      
+      <h2>
+        เบอร์ติดต่อ: {{item.phone}}
+        
+      </h2>
+      <h2>
+        อีเมล์: {{item.email}}
+      </h2>
+    <h2>ผลงาน</h2>
+     <h2>ประเภทงาน: {{item.name_th}}</h2>
+     <h2>เรทราคาการจ้าง: {{item.price}}</h2>
+     <br>
+     <img src="http://172.20.10.4/wawebv.3/gallerypic/{{item.cover_pic}}"  height='auto' width='auto'> 
+
+
+
+     <br>
+     <button ion-button color="energy"  (click)="loadReview(item)"><ion-icon name="heart-circle-outline"></ion-icon>&nbsp; Review</button>
+     <button ion-button color="energy"  (click)="loadDetail(item)"><ion-icon name="logo-instagram"></ion-icon>&nbsp; Gallery</button><br>
+     <button ion-button color="energy"  (click)="loadVideo(item)"><ion-icon name="logo-instagram"></ion-icon>&nbsp; Video</button>
+     
+  
+    </ion-card-content>
+    </ion-item>
+  </ion-card>
+
+      <ion-item-divider color="k">Review</ion-item-divider>
+
+  <ion-card >
+    <ion-item *ngFor="let review of rowsReview">
+      <h2>ผู้รีวิว: {{review.name}} {{review.surname}}</h2>
+      <h2>คะแนน: {{review.point}}</h2>
+      <h2>รายละเอียดการรีวิว: {{review.description}}</h2>
+    </ion-item>
+  </ion-card>
+
+
+  <ion-item-divider color="k">Gallery</ion-item-divider>
+  <ion-card >
+    <ion-item color="s" *ngFor="let item of rowsDetail">
+      <img src="http://172.20.10.4/wawebv.3/gallerypic/Gallery/{{item.file_name}}"  height='auto' width='auto'> 
+    </ion-item>
+  </ion-card>
+
+  <ion-item-divider color="k">Video</ion-item-divider>
+  <ion-card >
+    <ion-item color="s" *ngFor="let item of rowsVideo">
+      <video controls="controls" height='auto' width='auto' preload="metadata" webkit-playsinline="webkit-playsinline" class="videoPlayer">
+        <source src="http://172.20.10.4/wawebv.3/upVdo/{{item.file_name}}" type="video/mp4" />
+       </video>
+    </ion-item>
+  </ion-card>
+ 
+
+</ion-content>

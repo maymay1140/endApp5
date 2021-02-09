@@ -1,0 +1,44 @@
+<ion-header>
+  <ion-navbar color="k">
+    <ion-title>รายการจ้างช่างถ่ายภาพ</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding class="con-color">
+  <button color="w" ion-button (click)=" HomeMenu()">
+    <ion-icon name="home"></ion-icon> &nbsp; &nbsp; HomeMenu
+  </button>
+  
+  <ion-card class="status_c">
+    <ion-card-header>
+      Status สถานะของงาน
+    </ion-card-header>
+    <ion-card-content>
+    0: รอการอนุมัติ     1: อนุมัติแล้ว     2: ปฏิเสธ     3: งานเสร็จสิ้น
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card  *ngFor="let item of datarequest">
+    <ion-item color="s">
+     รหัสการจอง: {{item.id}}
+    </ion-item>
+    <ion-item color="s">
+      ช่างถ่ายภาพ: {{item.name}} {{item.surname}}
+     </ion-item>
+     <ion-item color="s">
+      วันที่ต้องการจอง: {{item.date}}
+     </ion-item>
+     <ion-item color="s">
+      สถานที่ : {{item.location}}
+     </ion-item>
+     <ion-item color="s">
+      เบอร์ติดต่อ: {{item.phone}}
+     </ion-item>
+     <ion-item >
+      สถานะของงาน: {{item.status}}
+     </ion-item>
+  </ion-card>
+
+
+
+</ion-content>

@@ -1,0 +1,82 @@
+<ion-header>
+  <ion-navbar color="k">
+    <ion-title>ค้นหาช่างภาพ</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding class="con-color">
+  <button color="w" ion-button (click)=" HomeMenu()">
+    <ion-icon name="home"></ion-icon> &nbsp; &nbsp; HomeMenu
+  </button>
+  <br>
+  <br>
+  <ion-item-divider color="k">ค้นหาช่างถ่ายภาพ</ion-item-divider>
+  
+  <ion-row>
+    <ion-col size="auto">
+      <ion-item>
+        <ion-label>ประเภทงาน</ion-label>
+        <ion-select [(ngModel)]="type_work">
+          <ion-option *ngFor="let item of typeArray" value="{{item.id}}">{{item.name_th}}</ion-option>
+        </ion-select>
+      </ion-item>
+    </ion-col>
+
+    <ion-col size="auto">
+      <ion-item>
+        <ion-label>เรทราคา (บาท)</ion-label>
+        <ion-select [(ngModel)]="price">
+          <ion-option value="1,500-2,000">1,500-2,000</ion-option>
+          <ion-option value="2,500-3,000">2,500-3,000</ion-option>
+          <ion-option value="3,500-4,000">3,500-4,000</ion-option>
+          <ion-option value="4,500-5,000">4,500-5,000</ion-option>
+          <ion-option value="5,001">5,000ขึ้นไป</ion-option>
+        </ion-select>
+      </ion-item>
+    </ion-col>
+
+    <ion-col size="auto">
+      <ion-item>
+        <ion-label>รูปแบบการจ้าง</ion-label>
+        <ion-select [(ngModel)]="type">
+          <ion-option value='1'>ครึ่งวัน</ion-option>
+          <ion-option value='2'>เต็มวัน</ion-option>
+        </ion-select>
+      </ion-item>
+    </ion-col>
+
+    <ion-col size="auto">
+      <ion-item>
+        <ion-label>จังหวัด</ion-label>
+        <ion-select [(ngModel)]="province">
+          <ion-option *ngFor="let item of typeProvince" value="{{item.id}}">{{item.name_th}}</ion-option>
+        </ion-select>
+      </ion-item>
+    </ion-col>
+    <ion-col size="auto">
+      <button color="w" ion-button (click)=" getsearch(type_work,price,type,province)">
+        <ion-icon name="search"></ion-icon> &nbsp; &nbsp; ค้นหา
+      </button>
+    </ion-col>
+  </ion-row>
+
+  <ion-item-divider color="k">ผลลัพธ์การค้นหา</ion-item-divider>
+  
+  <ion-card *ngFor="let item of rowsData">
+    <ion-item>
+      <br>
+      <h2>ชื่อจริง - นามสกุล : {{item.name}} {{item.surname}} </h2>
+      <h2>เบอร์โทรศัพท์ : {{item.phone}} </h2>
+      <h2>อีเมล์ : {{item.email}} </h2>
+      <button ion-button color="energy" id="login" class="marginTop" (click)="Detail(item)">
+        <ion-icon name="create"></ion-icon>&nbsp; รายละเอียด
+      </button>
+    </ion-item>
+  </ion-card>
+
+
+
+
+
+
+</ion-content>

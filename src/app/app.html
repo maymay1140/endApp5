@@ -1,0 +1,38 @@
+<ion-menu [content]="content" type="overlay">
+  <ion-header>
+    <ion-toolbar color="dark">
+      <img src="assets/imgs/users.png" class="imglogo"/>
+      <p class="text">My Profile<p>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-content class="con-color">
+    <ion-list>
+      <button menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)">
+        <ion-icon name="{{p.icon}}"></ion-icon>
+        {{p.title}}
+      </button>
+      
+    </ion-list>
+
+
+    
+    <ion-list>
+      <button ion-button block color="energy" (click)="home()"><ion-icon name="home"></ion-icon>
+        &nbsp; Home
+      </button>
+    </ion-list>
+
+    <ion-list>
+      <button ion-button block color="energy" (click)="logout()"><ion-icon name="log-out"></ion-icon>
+        &nbsp; ออกจากระบบ
+      </button>
+            
+      
+    </ion-list>
+  </ion-content>
+
+</ion-menu>
+
+<!-- Disable swipe-to-go-back because it's poor UX to combine STGB with side menus -->
+<ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>

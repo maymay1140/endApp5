@@ -1,0 +1,53 @@
+<ion-header>
+  <ion-navbar color="k">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>About Me</ion-title>
+
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding class="con-color">
+  <img src="assets/imgs/users.png" class="logo"/>
+  <ion-card class="aboutme" *ngFor="let item of rowsUser"> 
+    <ion-item>
+      <h2>ID Card : {{item.card_id}}</h2>
+    </ion-item>
+
+    <ion-item>
+      <h2>Username : {{item.username}}</h2>
+    </ion-item>
+  
+    <ion-item>
+      <h2>Name : {{item.name}}</h2>      
+    </ion-item>
+
+    <ion-item>
+      <h2>Surname : {{item.surname}}</h2>      
+    </ion-item>
+
+    <ion-item>
+      <h2>Phone : {{item.phone}}</h2>      
+    </ion-item>
+
+    <ion-item>
+      <h2>Email : {{item.email}}</h2>      
+    </ion-item>
+
+    <ion-item>
+      <h2>Province : {{item.provinces}}</h2>      
+    </ion-item>
+
+    <ion-item>
+      <h2>Districts : {{item.districts}}</h2>      
+    </ion-item>
+
+    <ion-item>
+      <h2>Subdistricts : {{item.subdistricts}}</h2>      
+    </ion-item>
+
+  </ion-card>
+  <button ion-button block color="s" outline (click)="edit()">Edit</button>
+
+</ion-content>

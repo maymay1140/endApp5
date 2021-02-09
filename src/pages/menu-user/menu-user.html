@@ -1,0 +1,81 @@
+<ion-header>
+  <ion-navbar color="k">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    
+    <ion-title>เมนูลูกค้า</ion-title>
+   
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding class="con-color">
+  <ion-list>
+    <ion-item color="s"   (click)="searchPage()">
+      <ion-thumbnail item-start>
+        <img src="assets/imgs/search.png">
+      </ion-thumbnail>
+      <h2>ค้นหาช่างถ่ายภาพ</h2>
+      <br>
+      
+      <button ion-button clear item-end></button>
+    </ion-item>
+    <ion-item color="s"  (click)="MenuContact()">
+        <ion-thumbnail item-start>
+          <img src="assets/imgs/pie-chart.png">
+        </ion-thumbnail>
+        <br>
+        <h2>รายการจ้างช่างถ่ายภาพ</h2>
+        <br>
+        
+        <button ion-button clear item-end></button>
+      </ion-item>
+
+      
+      
+      <ion-item color="s"  (click)="ReviewPhoto()">
+        <ion-thumbnail item-start>
+          <img src="assets/imgs/star.png">
+        </ion-thumbnail>
+        <br>
+        <h2>รีวิวช่างถ่ายภาพ</h2>
+        <br>
+        
+        <button ion-button clear item-end ></button>
+      </ion-item>
+
+  </ion-list>
+
+
+
+  <h1><ion-item-divider color="k">Category</ion-item-divider></h1>
+  <ion-content  class="card-background-page">
+
+    
+    <ion-card >
+      <img src="assets/imgs/6207.jpg"/>
+      <div class="card-title">Prewedding</div>
+      <div class="card-subtitle"></div>
+    </ion-card>
+
+    <ion-card>
+      <img src="assets/imgs/congrat.jpg"/>
+      <div class="card-title">Graduation</div>
+      <div class="card-subtitle"></div>
+    </ion-card>
+  
+    <ion-card>
+      <img src="assets/imgs/1.jpg"/>
+      <div class="card-title">Food</div>
+      <div class="card-subtitle"></div>
+    </ion-card>
+  
+    <ion-card>
+      <img src="assets/imgs/333.jpg"/>
+      <div class="card-title">Architecture</div>
+      <div class="card-subtitle"></div>
+    </ion-card>
+  
+  </ion-content>
+
+</ion-content>

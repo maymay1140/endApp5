@@ -1,0 +1,39 @@
+<ion-header>
+  <ion-navbar color="t">
+    <ion-title>ประวัติงาน</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding class="pho-color">
+  <button color="f" ion-button (click)=" HomeMenu()">
+    <ion-icon name="home"></ion-icon> &nbsp; &nbsp; HomeMenu
+  </button>
+
+  <!-- <ion-card class="status_c"> -->
+    <ion-card color="t">
+    <ion-card-header>
+      Status สถานะของงาน
+    </ion-card-header>
+    <ion-card-content>
+    0: รอการอนุมัติ     1: อนุมัติแล้ว     2: ปฏิเสธ     3: งานเสร็จสิ้น
+    </ion-card-content>
+  </ion-card>
+
+  
+<h2>
+  <ion-item-divider color="f">ประวัติการรับงาน</ion-item-divider>
+</h2>
+<ion-card *ngFor="let item of rowData">
+  <ion-item color="w">
+    <br>
+    <p>ชื่อจริง - นามสกุล : {{item.name}} {{item.surname}} </p>
+    <p>เบอร์โทรศัพท์ : {{item.phone}} </p>
+    <p style="white-space: pre-wrap" >สถานที่  : {{item.location}} </p>
+    <p>วันที่ : {{item.date}} </p>
+    <p>สถานะ : {{item.status}} </p>
+    <br>
+  </ion-item>
+</ion-card>
+
+</ion-content>
+

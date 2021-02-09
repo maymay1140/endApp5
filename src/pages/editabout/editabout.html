@@ -1,0 +1,63 @@
+<ion-header>
+  <ion-navbar color="k">
+    <ion-title>Edit About</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding class="con-color">
+  <img src="assets/imgs/users.png" class="logo"/>
+
+  <ion-list class="editabout">
+    <ion-item>
+      <ion-label fixed>Name</ion-label>
+      <ion-input type="text" [(ngModel)]="name"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label fixed>Surname</ion-label>
+      <ion-input type="text" [(ngModel)]="surname"></ion-input>
+    </ion-item>
+  
+    <ion-item>
+      <ion-label fixed>Phone</ion-label>
+      <ion-input type="text" [(ngModel)]="phone"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label fixed>Email</ion-label>
+      <ion-input type="text" [(ngModel)]="email"></ion-input>
+    </ion-item>
+
+
+    <ion-item>
+      <ion-label>Provinces</ion-label>
+      <ion-select multiple="true" (ionChange)="show($event)">
+        <ion-option *ngFor="let st of rowsProvinces ; let i = index"value="{{st.id}}">{{st.name_th}}</ion-option>
+      </ion-select>
+    </ion-item>
+
+    <button ion-button color="s" outline (click)="getamphures()"><ion-icon name="search"></ion-icon> &nbsp; ค้นหาอำเภอ</button>
+    
+    <ion-item>
+      <ion-label>Districts</ion-label>
+      <ion-select multiple="true" (ionChange)="showte($event)">
+        <ion-option *ngFor="let a of rowsAmphures ; let i = index" value="{{a.id}}">{{a.name_th}}</ion-option>
+      </ion-select>
+    </ion-item>
+
+
+  
+   <button ion-button color="s" outline (click)="gettambon()"><ion-icon name="search"></ion-icon> &nbsp; ค้นหาตำบล</button>
+    <ion-item>
+      <ion-label>Subdistricts</ion-label>
+      <ion-select [(ngModel)]="subdistricts">
+        <ion-option *ngFor="let t of rowsTambon" value="{{t.id}}">{{t.name_th}}</ion-option>
+      </ion-select>
+    </ion-item>
+
+
+  </ion-list>
+  <button ion-button block color="s" outline (click)="save(name,surname,phone,email,subdistricts)">Save</button>
+
+  
+</ion-content>

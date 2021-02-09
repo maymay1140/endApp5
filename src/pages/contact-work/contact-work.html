@@ -1,0 +1,48 @@
+<ion-header>
+  <ion-navbar color="k">
+    <ion-title>ระบุรายละเอียดการติดต่องาน</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding class="con-color">
+  <ion-card >
+    <ion-item color="s">
+    <ion-card-content>
+      <ion-card-title>
+       รายละเอียดช่างถ่ายภาพ
+        </ion-card-title>
+        <h2>ชื่อจริง - นามสกุล : {{item.name}} {{item.surname}} </h2>
+      <h2>
+        เบอร์ติดต่อ: {{item.phone}}
+      </h2>
+      <h2>
+        อีเมล์: {{item.email}}
+      </h2>
+    </ion-card-content>
+    </ion-item>
+  </ion-card>
+
+  <ion-item>
+    <ion-label>วันที่จ้าง</ion-label>
+    <ion-datetime displayFormat="DD/MMMM/YYYY" [(ngModel)]="date"></ion-datetime>
+  </ion-item>
+
+  <ion-list>
+    <ion-item>
+      <ion-label fixed>สถานที่ </ion-label>
+      <ion-input type="text" [(ngModel)]="location"></ion-input>
+    </ion-item>
+  </ion-list>
+
+  <ion-list>
+
+    <ion-item>
+      <ion-label fixed>เบอร์ติดต่อ</ion-label>
+      <ion-input type="text" [(ngModel)]="phone"></ion-input>
+    </ion-item>
+  </ion-list>
+  <button ion-button color="energy" class="marginTop" (click)="add_work(date,location,phone,item)">
+    <ion-icon name="add"></ion-icon>&nbsp; ส่งคำขอจ้างงาน
+  </button>
+
+</ion-content>

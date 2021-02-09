@@ -1,0 +1,54 @@
+<ion-header>
+  <ion-navbar color="t">
+    <ion-title>เมนูคำขอจ้างงาน</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content padding class="pho-col">
+  
+  <button color="f" ion-button (click)=" HomeMenu()">
+    <ion-icon name="home"></ion-icon> &nbsp; HomeMenu
+  </button>
+
+  <!-- <button ion-button block color="f" (click)=" HomeMenu()">
+    <ion-icon name="home"></ion-icon> &nbsp; HomeMenu
+  </button> -->
+
+  <button ion-button block color="f">รายละเอียดผู้ว่าจ้าง</button>
+  <ion-card  *ngFor="let item of rowData">
+    <ion-item color="w">
+      <br>
+      <h2>ชื่อจริง - นามสกุล : {{item.name}} {{item.surname}} </h2>
+      <h2>เบอร์โทรศัพท์ : {{item.phone}} </h2>
+      <h2 style="white-space: pre-wrap" >สถานที่  : {{item.location}} </h2>
+      <h2>วันที่ : {{item.date}} </h2>
+      <br>
+      <button ion-button color="kg" id="login" class="marginTop" (click)="Accept(item)">
+        <ion-icon name="create"></ion-icon>&nbsp; อนุมัติ
+      </button>
+      <button ion-button color="energy" id="login" class="marginTop" (click)="No(item)">
+        <ion-icon name="create"></ion-icon>&nbsp; ปฏิเสธิ
+      </button>
+    </ion-item>
+  </ion-card>
+
+<hr>
+<!-- <button ion-button block color="ye">รายการรออนุมัติงานเสร็จสิ้น</button> -->
+<ion-card *ngFor="let accept of rowAccept">
+  <ion-item color="w">
+    <br>
+    <h2>ชื่อจริง - นามสกุล : {{accept.name}} {{accept.surname}} </h2>
+    <h2>เบอร์โทรศัพท์ : {{accept.phone}} </h2>
+    <h2 style="white-space: pre-wrap" >สถานที่ : {{accept.location}} </h2>
+    <h2>วันที่ : {{accept.date}} </h2>
+    <br>
+   
+
+    <button ion-button color="energy" id="login" class="marginTop" (click)="Complete(accept)">
+      <ion-icon name="create"></ion-icon>&nbsp; ปิดจ็อบ
+    </button>
+  </ion-item>
+</ion-card>
+
+
+</ion-content>
+

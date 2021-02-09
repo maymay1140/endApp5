@@ -1,0 +1,53 @@
+<ion-header>
+  <ion-navbar color="t">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>เมนูช่างถ่ายภาพ</ion-title>
+
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding class="pho-color">
+  
+  <ion-list>
+    <ion-item color="w" (click)="MenuRequest()">
+      <ion-thumbnail item-start>
+        <img src="assets/imgs/email.png">
+      </ion-thumbnail>
+      <br>
+      <h2 style="white-space: pre-wrap" >คำขอจ้างงาน</h2>
+      <br>
+      <button ion-button clear item-end></button>
+    </ion-item>
+
+
+    <ion-item color="w" (click)="ViewReview()">
+        <ion-thumbnail item-start>
+          <img src="assets/imgs/star1.png">
+        </ion-thumbnail>
+        <br>
+        <h2 style="white-space: pre-wrap">ดูรายการรีวิวตนเอง</h2>
+        <br>
+        <button ion-button clear item-end></button>
+      </ion-item>
+
+      <ion-item color="w" (click)="Report()">
+        <ion-thumbnail item-start>
+          <img src="assets/imgs/p2.png">
+        </ion-thumbnail>
+        <br>
+        <h2>ประวัติงาน</h2>
+        <br>
+        
+        <button ion-button clear item-end ></button>
+      </ion-item>
+
+  </ion-list>
+
+
+
+
+
+
+</ion-content>

@@ -12,7 +12,7 @@ import { ReportWorkPage } from '../report-work/report-work';
 })
 export class HomePage {
 
-  constructor(public navCtrl: NavController,private storage: Storage) {
+  constructor(public navCtrl: NavController, storage: Storage) {
 
   }
   MenuRequest(){

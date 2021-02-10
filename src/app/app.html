@@ -1,7 +1,7 @@
 <ion-menu [content]="content" type="overlay">
   <ion-header>
     <ion-toolbar color="dark">
-      <img src="assets/imgs/users.png" class="imglogo"/>
+      <img src="assets/imgs/users1.png" class="imglogo"/>
       <p class="text">My Profile<p>
     </ion-toolbar>
   </ion-header>
@@ -13,6 +13,12 @@
         {{p.title}}
       </button>
       
+    </ion-list>
+
+    <ion-list>
+      <button ion-button block color="energy" (click)="about()"><ion-icon name="edit"></ion-icon>
+        &nbsp; About
+      </button>
     </ion-list>
 
 

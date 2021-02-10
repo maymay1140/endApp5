@@ -6,7 +6,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { Storage } from '@ionic/storage';
 
 import { HomePage } from '../pages/home/home';
-import { ListPage } from '../pages/list/list';
+// import { ListPage } from '../pages/list/list';
 import { MenuUserPage } from '../pages/menu-user/menu-user';
 import { AboutPage } from '../pages/about/about';
 
@@ -25,7 +25,7 @@ export class MyApp {
 
     // used for an example of ngFor and navigation
     this.pages = [
-      { title: 'About', component: AboutPage, icon:'information-circle' },
+      // { title: 'About', component: AboutPage, icon:'information-circle' },
       // { title: 'List', component: ListPage, icon:'home' }
     ];
 
@@ -53,6 +53,17 @@ export class MyApp {
 
 }
 
+about(){
+  this.storage.get('id').then((val) => {
+
+  if(val==null){
+    alert('กรุณาเข้าสู่ระบบก่อน');
+  }else{
+    this.nav.push(AboutPage);
+  }
+});
+}
+
   home(){
     this.storage.get('type').then((val) => {
   
@@ -64,6 +75,7 @@ export class MyApp {
       alert('กรุณาเข้าสู่ระบบก่อน');
     }
   });
+  
   
   }
 

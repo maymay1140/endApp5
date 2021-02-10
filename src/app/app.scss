@@ -1,5 +1,27 @@
 // http://ionicframework.com/docs/theming/
 
+.con-color{
+    background: linear-gradient(to bottom,
+    #EB5952 0%,
+    #F2955E 100%,
+    #EB5952 0%,
+    )!important;
+  }
+    .imglogo{
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    
+    }
+    .text{
+        margin-left: auto;
+        margin-right: auto;
+        width: 5em;
+        font-size: 12px;
+        margin-top: 20px;
+        color: white;
+        
+    }
 
 // App Global Sass
 // --------------------------------------------------
